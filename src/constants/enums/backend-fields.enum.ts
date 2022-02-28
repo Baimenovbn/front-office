@@ -5,6 +5,7 @@ export enum EBackendKeys {
   MIDDLE_NAME = 'middle_name',
   IIN = 'iin',
   DOCUMENT_NUMBER = 'document_number',
+  DOCUMENT_ISSUED_AT = 'document_issued_at',
   DOCUMENT_ISSUED_BY = 'document_issued_by',
   CITY = 'city',
   ADDRESS = 'address',

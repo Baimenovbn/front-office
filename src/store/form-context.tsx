@@ -10,12 +10,16 @@ export const FormProvider: FC = ({ children }) => {
 
   const changeState = debounce((newValue: any, valueKey: EBackendKeys | string) => {
     setState(oldState => ({...oldState, [valueKey]: newValue }));
-  }, 500);
+  }, 100);
+  const clearState = (() => {
+    setState({...initialState, changeState, clearState});
+  });
 
   return (
     <FormContext.Provider value={{
       ...state,
-      changeState
+      changeState,
+      clearState
     }}>
         {children}
     </FormContext.Provider>

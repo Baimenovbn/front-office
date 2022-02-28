@@ -10,8 +10,8 @@ export const DateInput = () => {
 
   return (
     <LocalizationProvider dateAdapter={DateAdapter}>
-    <DatePicker value={state[EBackendKeys.DOCUMENT_ISSUED_BY]}
-                onChange={date => state.changeState(date, EBackendKeys.DOCUMENT_ISSUED_BY)}
+    <DatePicker value={state[EBackendKeys.DOCUMENT_ISSUED_AT]}
+                onChange={date => state.changeState(date, EBackendKeys.DOCUMENT_ISSUED_AT)}
                 label="Дата выдачи"
                 renderInput={(params) => <TextField required margin="normal" {...params} />}
     />

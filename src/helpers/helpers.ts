@@ -9,3 +9,20 @@ export function getBase64(file: File | null | undefined): Promise<string | Array
     reader.onerror = error => reject(error);
   });
 }
+
+export function generateCode(length = 10) {
+  const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+  for ( var i = 0; i < length; i++ ) {
+    result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+  }
+  return result;
+}
+
+export function getFormattedDate(date: Date) {
+  return {
+    day: date.getDay(),
+    month: date.getMonth(),
+    year: date.getFullYear()
+  }
+}

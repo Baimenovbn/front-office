@@ -12,14 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="2d5c75b1-d357-43a5-9817-fb447bde47f1" name="Default Changelist" comment="feat: finish camera logics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DateInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FullName.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FullName.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PhoneInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PhoneInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/form-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/form-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/initial-state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/initial-state.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="25eG7BdYqJTwCoLyf0om1F2jmwV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,6 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -58,7 +63,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\77085\job\apply-job-form\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Practice\apply-job-form\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,6 +87,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -95,6 +102,7 @@
       <workItem from="1645958960500" duration="15367000" />
       <workItem from="1645977719527" duration="556000" />
       <workItem from="1646009852731" duration="5922000" />
+      <workItem from="1646033210048" duration="4115000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add upload buttons">
       <created>1646012433959</created>
@@ -121,7 +129,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -133,42 +141,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add upload buttons" />
     <MESSAGE value="feat: finish logic of keys" />
     <MESSAGE value="feat: finish camera logics" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: finish camera logics" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom" timestamp="1646015049797">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1646015049797" />
-    <state width="1346" height="171" key="GridCell.Tab.0.center" timestamp="1646015049796">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1646015049796" />
-    <state width="1346" height="171" key="GridCell.Tab.0.left" timestamp="1646015049796">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1646015049796" />
-    <state width="1346" height="171" key="GridCell.Tab.0.right" timestamp="1646015049796">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1646015049796" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1646013643191">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1646013643191" />
-    <state x="363" y="118" width="639" height="532" key="find.popup" timestamp="1646014494605">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="363" y="118" width="639" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1646014494605" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1646015846618">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1646015846618" />
   </component>
 </project>
