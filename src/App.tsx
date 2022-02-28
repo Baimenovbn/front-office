@@ -14,6 +14,7 @@ import FullName from './components/FullName';
 import { PhoneInput } from './components/PhoneInput';
 import { DateInput } from './components/DateInput';
 import { fileFields } from './constants/file-fields';
+import { EBackendKeys } from './constants/enums/backend-fields.enum';
 
 
 function App() {
@@ -39,18 +40,20 @@ function App() {
       <PhoneInput mask="+{7}(000) 000-00-00"
                   required
                   value={state.phone}
-                  onComplete={(_, mask) => state.changeState(mask.unmaskedValue, 'phone')}
+                  onComplete={(_, mask) => state.changeState(mask.unmaskedValue, EBackendKeys.PHONE)}
                   lazy={false}
       />
       <FullName key='key' />
-      <TextField onChange={e => state.changeState(e.target.value, 'iin')} required label="ИИН" variant="outlined"/>
-      <TextField onChange={e => state.changeState(e.target.value, 'documentNumber')} required label="Номер удостоверения личности" variant="outlined"/>
+      <TextField onChange={e => state.changeState(e.target.value, EBackendKeys.IIN)} required label="ИИН" variant="outlined"/>
+      <TextField onChange={e => state.changeState(e.target.value, EBackendKeys.DOCUMENT_NUMBER)} required label="Номер удостоверения личности" variant="outlined"/>
       <EasyTapRadioButton {...issuedBy} />
       <DateInput />
       <EasyTapRadioButton {...cities} />
-      <TextField required label="Адрес / Мекен-жай" variant="outlined"/>
+      <TextField onChange={e => state.changeState(e.target.value, EBackendKeys.ADDRESS)} required label="Адрес / Мекен-жай" variant="outlined"/>
       <EasyTapRadioButton {...banks} />
-      <TextField required label="IBAN счет" variant="outlined" helperText="приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать"/>
+      <TextField onChange={e => state.changeState(e.target.value, EBackendKeys.IBAN)}
+                 required label="IBAN счет" variant="outlined"
+                 helperText="приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать"/>
       {uploadBtns}
       <EasyTapWebcam />
       <div style={{textAlign: 'center'}}>

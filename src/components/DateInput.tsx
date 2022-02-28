@@ -3,14 +3,15 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { TextField } from '@mui/material';
 import { useContext } from 'react';
 import { FormContext } from '../store/form-context';
+import { EBackendKeys } from '../constants/enums/backend-fields.enum';
 
 export const DateInput = () => {
   const state = useContext(FormContext);
 
   return (
     <LocalizationProvider dateAdapter={DateAdapter}>
-    <DatePicker value={state.documentIssuedBy}
-                onChange={date => state.changeState(date, 'documentIssuedBy')}
+    <DatePicker value={state[EBackendKeys.DOCUMENT_ISSUED_BY]}
+                onChange={date => state.changeState(date, EBackendKeys.DOCUMENT_ISSUED_BY)}
                 label="Дата выдачи"
                 renderInput={(params) => <TextField required margin="normal" {...params} />}
     />

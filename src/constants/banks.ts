@@ -1,8 +1,9 @@
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
+import { EBackendKeys } from './enums/backend-fields.enum';
 
 export const banks: IRadioButtonProps = {
   label: 'Ваш банк',
-  valueKey: 'bankName',
+  valueKey: EBackendKeys.BANK_NAME,
   buttons: [
     {
       value: 'kaspi',

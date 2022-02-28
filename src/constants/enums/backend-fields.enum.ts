@@ -1,4 +1,4 @@
-export enum EBackendFields {
+export enum EBackendKeys {
   PHONE = 'phone',
   LAST_NAME = 'last_name',
   FIST_NAME = 'first_name',

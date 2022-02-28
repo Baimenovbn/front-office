@@ -1,24 +1,25 @@
+import { EBackendKeys } from '../constants/enums/backend-fields.enum';
+
 const today = new Date();
 
 export const initialState = {
-  phone: '',
+  [EBackendKeys.PHONE]: '',
 
-  lastName: '',
-  middleName: '',
-  firstName: '',
-  iin: '',
-  documentNumber: '',
-  documentIssuedBy: today,
+  [EBackendKeys.LAST_NAME]: '',
+  [EBackendKeys.MIDDLE_NAME]: '',
+  [EBackendKeys.FIST_NAME]: '',
+  [EBackendKeys.IIN]: '',
+  [EBackendKeys.DOCUMENT_NUMBER]: '',
+  [EBackendKeys.DOCUMENT_ISSUED_BY]: today,
 
-  issuedBy: '',
-  city: '',
-  bankName: '',
-  address: '',
-  changeState: (newValue: any, valueKey: string) => {},
-  iban: '',
-  code: '',
-  document_files: [],
-  vaccine_passport_files: [],
-  medical_passport_files: [],
-  badge_files: []
+  [EBackendKeys.CITY]: '',
+  [EBackendKeys.BANK_NAME]: '',
+  [EBackendKeys.ADDRESS]: '',
+  changeState: (newValue: any, valueKey: EBackendKeys) => {},
+  [EBackendKeys.IBAN]: '',
+  [EBackendKeys.CODE]: '',
+  [EBackendKeys.DOCUMENT_FILES]: [],
+  [EBackendKeys.VACCINE_PASSPORT_FILES]: [],
+  [EBackendKeys.MEDICAL_PASSPORT_FILES]: [],
+  [EBackendKeys.BADGE_FILES]: []
 };

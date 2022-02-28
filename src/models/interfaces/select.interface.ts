@@ -1,4 +1,4 @@
-import { initialState } from '../../store/initial-state';
+import { EBackendKeys } from '../../constants/enums/backend-fields.enum';
 
 export interface ISelect {
   value: any;
@@ -8,5 +8,5 @@ export interface ISelect {
 export interface IRadioButtonProps {
   label: string,
   buttons: ISelect[];
-  valueKey: keyof typeof initialState;
+  valueKey: EBackendKeys;
 }

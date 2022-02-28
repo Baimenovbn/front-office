@@ -2,12 +2,12 @@ import Button from '@mui/material/Button';
 import { ChangeEvent, useContext } from 'react';
 import { getBase64 } from '../helpers/helpers';
 import { FormContext } from '../store/form-context';
-import { initialState } from '../store/initial-state';
 import { FormLabel } from '@mui/material';
+import { EBackendKeys } from '../constants/enums/backend-fields.enum';
 
 export interface IFileUpload {
   multi?: boolean;
-  stateKey: keyof typeof initialState;
+  stateKey: EBackendKeys;
   label: string;
   helpText: string;
   sx?: object;
