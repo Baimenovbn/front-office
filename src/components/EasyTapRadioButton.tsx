@@ -1,22 +1,23 @@
-import React from 'react';
-import RadioGroup, { FormControlLabel, FormLabel, FormControl } from '@mui/material';
+import { RadioGroup, FormControlLabel, FormLabel, FormControl, Radio } from '@mui/material';
+import { IRadioButtonProps } from '../models/interfaces/select.interface';
+import { useContext } from 'react';
+import { FormContext } from '../store/form-context';
 
-export interface ISelect {
-  value: any;
-  label: string;
-}
-
-export interface IRadioProps {
-  label: string,
-  buttons: ISelect[];
-}
-
-function IssuedBy({ buttons, label }: IRadioProps) {
+export function EasyTapRadioButton({ buttons, label, valueKey }: IRadioButtonProps) {
+  const btns = buttons.map((btn) => (
+    <FormControlLabel value={btn.value} key={btn.label} sx={{ alignSelf: 'start'}} control={<Radio />} label={btn.label}/>
+  ));
+  const state = useContext(FormContext);
 
   return (
-    <FormControl>
+    <FormControl className="easy-input">
       <FormLabel>{label}</FormLabel>
-
+      <RadioGroup className="easy-input"
+        value={state[valueKey]}
+        onChange={(e) => state.changeState(e.target.value, valueKey)}
+      >
+        {btns}
+      </RadioGroup>
     </FormControl>
   )
 }
