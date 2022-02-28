@@ -30,10 +30,10 @@ export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {}
     <div className="upload-btn">
       <FormLabel>{label}</FormLabel>
       <input onChange={handleFile} multiple={multi} style={{ display: 'none' }}
-             type="file" id="upload-photo" name="upload-photo"
+             type="file" id={"upload-photo" + stateKey} name={"upload-photo" + stateKey}
       />
       <div>
-        <label htmlFor="upload-photo">
+        <label htmlFor={"upload-photo" + stateKey}>
           <Button color="primary" variant="contained" component="span" {...sx}>
             Загрузить файл
           </Button>

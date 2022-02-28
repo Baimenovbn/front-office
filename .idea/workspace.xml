@@ -10,21 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d5c75b1-d357-43a5-9817-fb447bde47f1" name="Default Changelist" comment="feat: add upload buttons">
+    <list default="true" id="2d5c75b1-d357-43a5-9817-fb447bde47f1" name="Default Changelist" comment="feat: finish logic of keys">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/main-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FullName.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FullName.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UploadButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/banks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/banks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/cities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/cities.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/file-fields.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/file-fields.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/issued-by.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/issued-by.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/interfaces/select.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/interfaces/select.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/form-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/form-context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/initial-state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/initial-state.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +57,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\77085\job\apply-job-form\node_modules\typescript\lib" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\77085\job\apply-job-form\src\assets\images" />
+      <recent name="C:\Users\77085\job\apply-job-form\src\assets" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -93,7 +91,7 @@
       <workItem from="1645879970768" duration="10765000" />
       <workItem from="1645958960500" duration="15367000" />
       <workItem from="1645977719527" duration="556000" />
-      <workItem from="1646009852731" duration="3615000" />
+      <workItem from="1646009852731" duration="5047000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add upload buttons">
       <created>1646012433959</created>
@@ -102,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646012433959</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: finish logic of keys">
+      <created>1646013638140</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646013638140</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,32 +127,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add upload buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add upload buttons" />
+    <MESSAGE value="feat: finish logic of keys" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: finish logic of keys" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom" timestamp="1646013456527">
+    <state width="1346" height="171" key="GridCell.Tab.0.bottom" timestamp="1646014993132">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1646013456527" />
-    <state width="1346" height="171" key="GridCell.Tab.0.center" timestamp="1646013456526">
+    <state width="1346" height="171" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1646014993132" />
+    <state width="1346" height="171" key="GridCell.Tab.0.center" timestamp="1646014993131">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1646013456526" />
-    <state width="1346" height="171" key="GridCell.Tab.0.left" timestamp="1646013456526">
+    <state width="1346" height="171" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1646014993131" />
+    <state width="1346" height="171" key="GridCell.Tab.0.left" timestamp="1646014993131">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1646013456526" />
-    <state width="1346" height="171" key="GridCell.Tab.0.right" timestamp="1646013456527">
+    <state width="1346" height="171" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1646014993131" />
+    <state width="1346" height="171" key="GridCell.Tab.0.right" timestamp="1646014993131">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1646013456527" />
-    <state x="363" y="118" width="639" height="532" key="find.popup" timestamp="1646012947076">
+    <state width="1346" height="171" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1646014993131" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1646013643191">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="363" y="118" width="639" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1646012947076" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1645968639764">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1646013643191" />
+    <state x="363" y="118" width="639" height="532" key="find.popup" timestamp="1646014494605">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1645968639764" />
+    <state x="363" y="118" width="639" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1646014494605" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1646014427383">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1646014427383" />
   </component>
 </project>

@@ -23,20 +23,11 @@ function App() {
     e.preventDefault();
     console.log(state);
   }
-  const uploadBtns = fileFields.map(fileMeta => <UploadButton {...fileMeta}/>);
+  const uploadBtns = fileFields.map(fileMeta => <UploadButton key={fileMeta.stateKey} {...fileMeta}/>);
 
   return (
     <form className="app-container" onSubmit={submit}>
-      { state.city }
       <h1 className="header-title">Оформление на работу</h1>
-      <div className="easy-tap-support">
-        <p>
-          В случае проблем и вопросов мы ждем Вас здесь
-        </p>
-        <a href="https://t.me/easytap_support_bot">
-          easytap_support_bot
-        </a>
-      </div>
       <PhoneInput mask="+{7}(000) 000-00-00"
                   required
                   value={state.phone}
