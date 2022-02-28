@@ -29,7 +29,7 @@ export function EasyTapWebcam() {
           ? <img src={imgSrc} alt="photo" style={{width: '60%'}}/>
           : (isPhoto ? <Webcam audio={false} width="60%" ref={webcamRef} mirrored={true} /> : '')
       }
-      <div>
+      <div className="webcam-btns">
         <Button onClick={() => setIsPhoto(!isPhoto)}
                 variant="contained" style={{marginRight: '10px'}}
         >

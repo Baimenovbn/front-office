@@ -5,6 +5,17 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.main-logo {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.main-logo__photo {
+  width: 215px;
+}
+
 .app-container {
   max-width: 752px;
   margin: 0 auto;
@@ -47,4 +58,8 @@ body {
   border-radius: 7px;
   border: 1px solid #e8e8e8;
   padding: 10px;
+}
+
+.webcam-btns {
+  padding-left: 10px;
 }
