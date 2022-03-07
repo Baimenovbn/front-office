@@ -1,16 +1,16 @@
 import Button from '@mui/material/Button';
-import React, { useContext, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Webcam from "react-webcam";
-// import { FormContext } from '../store/form-context';
-// import { EBackendKeys } from '../constants/enums/backend-fields.enum';
+import { StateChanger } from '../models/types/function.type';
 
-
-export function EasyTapWebcam() {
+function EasyTapWebcam(props: { setStateByKey: StateChanger }) {
+  useEffect(() => {
+    console.log('EasyTapWebcam');
+  });
   const webcamRef = React.useRef(null);
   const [isPhoto, setIsPhoto] = useState(false);
   const [isPhotoTaken, setIsPhotoTaken] = useState(false);
   const [imgSrc, setImgSrc] = useState('');
-  // const { changeState } = useContext(FormContext);
 
   const capture = React.useCallback(
     () => {
@@ -44,3 +44,5 @@ export function EasyTapWebcam() {
     </div>
   )
 }
+
+export default memo(EasyTapWebcam);

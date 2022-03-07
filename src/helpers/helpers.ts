@@ -1,3 +1,5 @@
+import { IBackendDate } from '../API';
+
 export function getBase64(file: File | null | undefined): Promise<string | ArrayBuffer | null> {
   if (!file) {
     return new Promise(res => res(null));
@@ -19,7 +21,7 @@ export function generateCode(length = 10) {
   return result;
 }
 
-export function getFormattedDate(date: Date) {
+export function getFormattedDate(date: Date): IBackendDate {
   return {
     day: date.getDay(),
     month: date.getMonth(),

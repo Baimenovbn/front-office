@@ -1,27 +1,29 @@
-import { EBackendKeys } from '../constants/enums/backend-fields.enum';
+import { EStateKeys } from '../constants/enums/backend-fields.enum';
 
 const today = new Date();
 
 export const initialState = {
-  [EBackendKeys.PHONE]: '',
+  [EStateKeys.PHONE]: '',
+  [EStateKeys.LAST_NAME]: '',
+  [EStateKeys.MIDDLE_NAME]: '',
+  [EStateKeys.FIST_NAME]: '',
 
-  [EBackendKeys.LAST_NAME]: '',
-  [EBackendKeys.MIDDLE_NAME]: '',
-  [EBackendKeys.FIST_NAME]: '',
-  [EBackendKeys.IIN]: '',
-  [EBackendKeys.DOCUMENT_NUMBER]: '',
-  [EBackendKeys.DOCUMENT_ISSUED_BY]: '',
-  [EBackendKeys.DOCUMENT_ISSUED_AT]: today,
+  [EStateKeys.IIN]: '',
+  [EStateKeys.DOCUMENT_NUMBER]: '',
+  [EStateKeys.DOCUMENT_ISSUED_BY]: '',
+  [EStateKeys.DOCUMENT_ISSUED_AT]: today,
 
-  [EBackendKeys.CITY]: '',
-  [EBackendKeys.BANK_NAME]: '',
-  [EBackendKeys.ADDRESS]: '',
-  changeState: (newValue: any, valueKey: EBackendKeys) => {},
-  clearState: () => {},
-  [EBackendKeys.IBAN]: '',
-  [EBackendKeys.CODE]: '',
-  [EBackendKeys.DOCUMENT_FILES]: [],
-  [EBackendKeys.VACCINE_PASSPORT_FILES]: [],
-  [EBackendKeys.MEDICAL_PASSPORT_FILES]: [],
-  [EBackendKeys.BADGE_FILES]: []
+  [EStateKeys.CITY]: '',
+  [EStateKeys.ADDRESS]: '',
+
+  [EStateKeys.BANK_NAME]: '',
+  [EStateKeys.IBAN]: '',
+
+  [EStateKeys.CODE]: '',
+
+  [EStateKeys.DOCUMENT_FILES]: [] as any[],
+  [EStateKeys.VACCINE_PASSPORT_FILES]: [] as any[],
+  [EStateKeys.MEDICAL_PASSPORT_FILES]: [] as any[],
+
+  [EStateKeys.BADGE_FILES]: [] as any[]
 };

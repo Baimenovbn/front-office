@@ -1,20 +1,23 @@
 import Button from '@mui/material/Button';
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent, useEffect } from 'react';
 import { getBase64 } from '../helpers/helpers';
-import { FormContext } from '../store/form-context';
 import { FormLabel } from '@mui/material';
-import { EBackendKeys } from '../constants/enums/backend-fields.enum';
+import { EStateKeys } from '../constants/enums/backend-fields.enum';
+import { StateChanger } from '../models/types/function.type';
 
 export interface IFileUpload {
   multi?: boolean;
-  stateKey: EBackendKeys;
+  stateKey: EStateKeys;
   label: string;
   helpText: string;
   sx?: object;
+  setStateByKey?: StateChanger;
 }
 
-export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {} }: IFileUpload) => {
-  const { changeState } = useContext(FormContext);
+export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {}, setStateByKey }: IFileUpload) => {
+  useEffect(() => {
+    console.log('UploadButton')
+  });
   const handleFile = async (e: ChangeEvent<HTMLInputElement>) => {
     const formattedFiles: (string | ArrayBuffer | null)[] = [];
     const length = e.target.files?.length || 0;
@@ -23,7 +26,7 @@ export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {}
       formattedFiles.push(base64);
     }
     e.target.value = '';
-    changeState(formattedFiles, stateKey);
+    setStateByKey && setStateByKey(formattedFiles, stateKey);
   }
 
   return (

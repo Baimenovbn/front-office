@@ -1,9 +1,9 @@
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
-import { EBackendKeys } from './enums/backend-fields.enum';
+import { EStateKeys } from './enums/backend-fields.enum';
 
 export const cities: IRadioButtonProps = {
   label: 'Город',
-  valueKey: EBackendKeys.CITY,
+  valueKey: EStateKeys.CITY,
   buttons: [
     {
       value: 'almaty',
@@ -13,5 +13,6 @@ export const cities: IRadioButtonProps = {
       value: 'nur-sultan',
       label: 'Нур-Султан'
     },
-  ]
+  ],
+  value: ''
 };
