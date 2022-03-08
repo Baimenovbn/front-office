@@ -9,7 +9,7 @@ export const PhoneInput = IMaskMixin(props => {
 
   const checkForError = (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement, Element>) => {
     const valueLength = (props.data as string).length;
-    const isEmpty = valueLength <= (props && props.minLength) || 1;
+    const isEmpty = valueLength <= (props.minLength || 1);
     const isFilled = valueLength === props.maxLength;
     setHelperText(isEmpty ? 'Это поле обязательно к заполнению'
                   : isFilled ? '' : 'Заполните поле соответственно маске');
