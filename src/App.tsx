@@ -28,10 +28,11 @@ function App() {
     <form className="app-container" onSubmit={submitForm}>
 
       <h1 className="header-title">Оформление на работу</h1>
-
-      <PhoneInput mask="+{7}(000) 000-00-00" required defaultValue={''}
-                  onComplete={(_, mask) => setStateByKey(mask.unmaskedValue, EStateKeys.PHONE)}
-                  lazy={false} pattern="[0-9]{11}"
+      <PhoneInput mask="+{7}(000) 000-00-00" lazy={false} pattern="[0-9]{11}"
+                  onAccept={(_, mask) => setStateByKey(mask.unmaskedValue, EStateKeys.PHONE)}
+                  label={'Номер телефона / Телефон нөмері'} alt={'Это поле обязательно к заполнению'}
+                  minLength={1}
+                  data={formState[EStateKeys.PHONE]} maxLength={11}
       />
 
       <div className="full-name">
@@ -64,10 +65,13 @@ function App() {
       <EasyTapRadioButton {...banks} setStateByKey={memoedChanger} value={formState[EStateKeys.BANK_NAME]} />
 
       <PhoneInput mask="KZ******************"
-                  required pattern="KZ[A-Za-z0-9]{18}"
-                  defaultValue={''}
-                  onComplete={(_, mask) => setStateByKey(mask.unmaskedValue, EStateKeys.IBAN)}
-                  lazy={false} label="IBAN счет" placeholder="приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать"
+                  data={formState[EStateKeys.IBAN]}
+                  pattern="KZ[A-Za-z0-9]{18}"
+                  maxLength={20}
+                  minLength={2}
+                  onAccept={(_, mask) => setStateByKey('KZ' + mask.unmaskedValue, EStateKeys.IBAN)}
+                  lazy={false} label="IBAN счет"
+                  placeholder="приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать"
       />
 
       {uploadBtns}
