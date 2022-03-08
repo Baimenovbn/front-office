@@ -15,19 +15,21 @@ const useFormState = () => {
   const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // TODO (@Baimenovbn): call for code field
+    console.log(formState[EStateKeys.DOCUMENT_ISSUED_AT]);
     const stateForBackend = {
       ...formState,
       [EStateKeys.CODE]: generateCode(),
       [EStateKeys.DOCUMENT_ISSUED_AT]: getFormattedDate(formState[EStateKeys.DOCUMENT_ISSUED_AT])
     }
 
-    const response = await API.submitForm(stateForBackend);
-    if (response.status === 200) {
-      alert('Ваши данные были успешно обработаны');
-      setFormState({...initialState})
-    } else {
-      alert('Произошла какая-то ошибка при обработке ваших данных')
-    }
+    console.log(stateForBackend);
+    // const response = await API.submitForm(stateForBackend);
+    // if (response.status === 200) {
+    //   alert('Ваши данные были успешно обработаны');
+    //   setFormState({...initialState})
+    // } else {
+    //   alert('Произошла какая-то ошибка при обработке ваших данных')
+    // }
   }
 
   return { formState, setStateByKey, submitForm };

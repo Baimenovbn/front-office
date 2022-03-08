@@ -12,9 +12,12 @@ export interface IFileUpload {
   helpText: string;
   sx?: object;
   setStateByKey?: StateChanger;
+
+  errorText?: string,
+  isError?: boolean;
 }
 
-export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {}, setStateByKey }: IFileUpload) => {
+export const UploadButton = (props: IFileUpload) => {
   useEffect(() => {
     console.log('UploadButton')
   });
@@ -26,24 +29,24 @@ export const UploadButton = ({ helpText, stateKey, label, multi = false, sx = {}
       formattedFiles.push(base64);
     }
     e.target.value = '';
-    setStateByKey && setStateByKey(formattedFiles, stateKey);
+    props.setStateByKey && props.setStateByKey(formattedFiles, props.stateKey);
   }
 
   return (
     <div className="upload-btn">
-      <FormLabel>{label}</FormLabel>
-      <input onChange={handleFile} multiple={multi} style={{ display: 'none' }}
-             type="file" id={"upload-photo" + stateKey} name={"upload-photo" + stateKey}
+      <FormLabel>{props.label}</FormLabel>
+      <input onChange={handleFile} multiple={props.multi} style={{ display: 'none' }}
+             type="file" id={"upload-photo" + props.stateKey} name={"upload-photo" + props.stateKey}
       />
       <div>
-        <label htmlFor={"upload-photo" + stateKey}>
-          <Button color="primary" variant="contained" component="span" {...sx}>
+        <label htmlFor={"upload-photo" + props.stateKey}>
+          <Button color="primary" variant="contained" component="span" {...props.sx}>
             Загрузить файл
           </Button>
         </label>
       </div>
       <p>
-        {helpText}
+        {props.helpText}
       </p>
     </div>
   );

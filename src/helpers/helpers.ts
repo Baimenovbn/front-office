@@ -15,7 +15,7 @@ export function getBase64(file: File | null | undefined): Promise<string | Array
 export function generateCode(length = 10) {
   const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
-  for ( var i = 0; i < length; i++ ) {
+  for (let i = 0; i < length; i++) {
     result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
   }
   return result;
@@ -23,8 +23,8 @@ export function generateCode(length = 10) {
 
 export function getFormattedDate(date: Date): IBackendDate {
   return {
-    day: date.getDay(),
-    month: date.getMonth(),
+    day: date.getDate(),
+    month: date.getMonth() + 1,
     year: date.getFullYear()
   }
 }
