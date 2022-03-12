@@ -7,6 +7,6 @@ export interface ISelect {
 
 export interface IRadioButtonProps {
   label: string;
-  name: EStateKeys;
+  name: EStateKeys | string;
   options: ISelect[];
 }

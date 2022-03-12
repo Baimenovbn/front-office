@@ -2,7 +2,7 @@ import React, {useContext, useMemo} from 'react';
 import './App.css';
 
 import {Form, FormikContext} from 'formik'
-import { Field } from "formik";
+import { FastField } from "formik";
 import {SimpleFileUpload, TextField} from "formik-mui";
 import {DatePicker} from "formik-mui-lab";
 import DateAdapter from '@mui/lab/AdapterDayjs';
@@ -30,12 +30,12 @@ function App() {
             <h1 className="header-title">Оформление на работу</h1>
             {/*<Field component={MaskedInput} PhoneInput/>*/}
             <div className="full-name">
-                <Field component={TextField} name={EStateKeys.LAST_NAME} className="full-name__item" label="Фамилия" required />
-                <Field component={TextField} name={EStateKeys.FIRST_NAME} className="full-name__item" label="Имя" required/>
-                <Field component={TextField} name={EStateKeys.MIDDLE_NAME} className="full-name__item" label="Отчество" required />
+                <FastField component={TextField} name={EStateKeys.LAST_NAME} className="full-name__item" label="Фамилия" required />
+                <FastField component={TextField} name={EStateKeys.FIRST_NAME} className="full-name__item" label="Имя" required/>
+                <FastField component={TextField} name={EStateKeys.MIDDLE_NAME} className="full-name__item" label="Отчество" required />
             </div>
-            <Field inputProps={{maxLength: 12}} component={TextField} name={EStateKeys.IIN} label="ИИН / ЖСН" required />
-            <Field inputProps={{maxLength: 9}}
+            <FastField inputProps={{maxLength: 12}} component={TextField} name={EStateKeys.IIN} label="ИИН / ЖСН" required />
+            <FastField inputProps={{maxLength: 9}}
                    component={TextField}
                    name={EStateKeys.DOCUMENT_NUMBER}
                    label="Номер удостоверения личности / Жеке куәліктің нөмері"
@@ -43,11 +43,11 @@ function App() {
             />
             <EasyTapRadioButton {...issuedBy} />
             <LocalizationProvider dateAdapter={DateAdapter}>
-                <Field component={DatePicker} label="Дата выдачи / Берілген күні" required name={EStateKeys.DOCUMENT_ISSUED_AT} />
+                <FastField component={DatePicker} label="Дата выдачи / Берілген күні" required name={EStateKeys.DOCUMENT_ISSUED_AT} />
             </LocalizationProvider>
 
             <EasyTapRadioButton {...cities} />
-            <Field component={TextField} name={EStateKeys.ADDRESS} label="Адрес / Мекен-жай" required />
+            <FastField component={TextField} name={EStateKeys.ADDRESS} label="Адрес / Мекен-жай" required />
             <EasyTapRadioButton {...banks} />
             <div>
                 {/*<Field component={MaskedInput} IBAN/>*/}

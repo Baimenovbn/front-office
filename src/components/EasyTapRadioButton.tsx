@@ -1,11 +1,10 @@
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
 import {memo, useMemo} from 'react';
-import { Field } from 'formik';
+import {FastField} from 'formik';
 import { RadioGroup } from "formik-mui";
 import {FormControl, FormControlLabel, FormLabel, Radio} from "@mui/material";
 
 export const EasyTapRadioButton = memo((props: IRadioButtonProps) => {
-
     const options = useMemo(() => props.options.map(option => (
         <FormControlLabel control={<Radio />} key={option.value} label={option.label} value={option.value} />
     )), []);
@@ -13,9 +12,9 @@ export const EasyTapRadioButton = memo((props: IRadioButtonProps) => {
     return (
         <FormControl className="easy-input">
             <FormLabel required>{props.label}</FormLabel>
-            <Field component={RadioGroup} name={props.name} label={props.label}>
+            <FastField component={RadioGroup} name={props.name} label={props.label}>
                 {options}
-            </Field>
+            </FastField>
         </FormControl>
     )
 });
