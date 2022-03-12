@@ -1,10 +1,10 @@
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
-import { EStateKeys } from './enums/backend-fields.enum';
+import { EStateKeys } from '../models/enums/state-keys.enum';
 
 export const issuedBy: IRadioButtonProps = {
-  label: 'Орган выдачи',
-  valueKey: EStateKeys.DOCUMENT_ISSUED_BY,
-  buttons: [
+  label: 'Орган выдачи / Берген орган',
+  name: EStateKeys.DOCUMENT_ISSUED_BY,
+  options: [
     {
       value: 'MIAK',
       label: 'МВД РК'
@@ -14,5 +14,4 @@ export const issuedBy: IRadioButtonProps = {
       label: 'МинЮст'
     },
   ],
-  value: ''
 };

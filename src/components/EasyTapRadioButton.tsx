@@ -1,24 +1,21 @@
-import { RadioGroup, FormControlLabel, FormLabel, FormControl, Radio } from '@mui/material';
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
-import { memo, useEffect } from 'react';
+import {memo, useMemo} from 'react';
+import { Field } from 'formik';
+import { RadioGroup } from "formik-mui";
+import {FormControl, FormControlLabel, FormLabel, Radio} from "@mui/material";
 
-export const EasyTapRadioButton = memo(({ buttons, label, valueKey, setStateByKey, value }: IRadioButtonProps) => {
-  useEffect(() => {
-    console.log('EasyTapRadioButton');
-  });
-  const btns = buttons.map((btn) => (
-    <FormControlLabel value={btn.value} key={btn.label} sx={{ alignSelf: 'start'}} control={<Radio />} label={btn.label}/>
-  ));
+export const EasyTapRadioButton = memo((props: IRadioButtonProps) => {
 
-  return (
-    <FormControl className="easy-input">
-      <FormLabel>{label}</FormLabel>
-      <RadioGroup className="easy-input"
-        value={value}
-        onChange={(e) => setStateByKey && setStateByKey(e.target.value, valueKey)}
-      >
-        {btns}
-      </RadioGroup>
-    </FormControl>
-  )
+    const options = useMemo(() => props.options.map(option => (
+        <FormControlLabel control={<Radio />} key={option.value} label={option.label} value={option.value} />
+    )), []);
+
+    return (
+        <FormControl className="easy-input">
+            <FormLabel required>{props.label}</FormLabel>
+            <Field component={RadioGroup} name={props.name} label={props.label}>
+                {options}
+            </Field>
+        </FormControl>
+    )
 });

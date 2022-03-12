@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import logo from './assets/images/main-logo.png'
+import FormikForm from "./formik";
 
 ReactDOM.render(
   <React.StrictMode>
     <div className="main-logo">
       <img src={logo} alt="easy-tap" className="main-logo__photo"/>
     </div>
-    <App />
+    <FormikForm>
+      <App />
+    </FormikForm>
   </React.StrictMode>,
   document.getElementById('root')
 );

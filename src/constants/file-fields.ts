@@ -1,5 +1,5 @@
 import { IFileUpload } from '../components/UploadButton';
-import { EStateKeys } from './enums/backend-fields.enum';
+import { EStateKeys } from '../models/enums/state-keys.enum';
 
 export const fileFields: IFileUpload[] = [
   {

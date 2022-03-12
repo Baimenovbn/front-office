@@ -2,8 +2,7 @@ import Button from '@mui/material/Button';
 import { ChangeEvent, useEffect } from 'react';
 import { getBase64 } from '../helpers/helpers';
 import { FormLabel } from '@mui/material';
-import { EStateKeys } from '../constants/enums/backend-fields.enum';
-import { StateChanger } from '../models/types/function.type';
+import { EStateKeys } from '../models/enums/state-keys.enum';
 
 export interface IFileUpload {
   multi?: boolean;
@@ -11,7 +10,7 @@ export interface IFileUpload {
   label: string;
   helpText: string;
   sx?: object;
-  setStateByKey?: StateChanger;
+  setStateByKey?: any;
 
   errorText?: string,
   isError?: boolean;

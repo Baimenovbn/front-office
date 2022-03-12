@@ -1,12 +1,13 @@
-import { EStateKeys } from '../constants/enums/backend-fields.enum';
+import { EStateKeys } from '../models/enums/state-keys.enum';
+import {IFormState} from "../models/interfaces/form-state.interface";
 
 const today = new Date();
 
-export const initialState = {
+export const initialState: IFormState = {
   [EStateKeys.PHONE]: '',
   [EStateKeys.LAST_NAME]: '',
   [EStateKeys.MIDDLE_NAME]: '',
-  [EStateKeys.FIST_NAME]: '',
+  [EStateKeys.FIRST_NAME]: '',
 
   [EStateKeys.IIN]: '',
   [EStateKeys.DOCUMENT_NUMBER]: '',
@@ -21,9 +22,9 @@ export const initialState = {
 
   [EStateKeys.CODE]: '',
 
-  [EStateKeys.DOCUMENT_FILES]: [] as any[],
-  [EStateKeys.VACCINE_PASSPORT_FILES]: [] as any[],
-  [EStateKeys.MEDICAL_PASSPORT_FILES]: [] as any[],
+  [EStateKeys.DOCUMENT_FILES]: [],
+  [EStateKeys.VACCINE_PASSPORT_FILES]: [],
+  [EStateKeys.MEDICAL_PASSPORT_FILES]: [],
 
-  [EStateKeys.BADGE_FILES]: [] as any[]
+  [EStateKeys.BADGE_FILES]: []
 };

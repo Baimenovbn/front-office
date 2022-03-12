@@ -1,4 +1,4 @@
-import { EStateKeys } from '../../constants/enums/backend-fields.enum';
+import { EStateKeys } from '../enums/state-keys.enum';
 
 export interface ISelect {
   value: any;
@@ -6,9 +6,7 @@ export interface ISelect {
 }
 
 export interface IRadioButtonProps {
-  label: string,
-  buttons: ISelect[];
-  valueKey: EStateKeys;
-  setStateByKey?: <T>(newValue: T, key: EStateKeys) => void;
-  value: string;
+  label: string;
+  name: EStateKeys;
+  options: ISelect[];
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { initialState } from '../store/initial-state';
-import { EStateKeys } from '../constants/enums/backend-fields.enum';
+import { initialState } from '../constants/initial-state';
+import { EStateKeys } from '../models/enums/state-keys.enum';
 const instance = axios.create({
   baseURL: 'https://requestbin.net/'
 })

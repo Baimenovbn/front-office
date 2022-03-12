@@ -10,27 +10,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d5c75b1-d357-43a5-9817-fb447bde47f1" name="Default Changelist" comment="feat: finish camera logics">
-      <change afterPath="$PROJECT_DIR$/src/models/types/function.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/useFormState.ts" afterDir="false" />
+    <list default="true" id="2d5c75b1-d357-43a5-9817-fb447bde47f1" name="Default Changelist" comment="refactor: try to change state management">
+      <change afterPath="$PROJECT_DIR$/src/components/MaskedInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/formik/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/interfaces/form-state.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/types/base64.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/types/with-children.type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validation/validation-schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DateInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DateInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DateInput.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EasyTapRadioButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EasyTapRadioButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EasyTapWebcam.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FullName.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PhoneInput.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UploadButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UploadButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/banks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/banks.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/cities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/cities.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/enums/backend-fields.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/enums/state-keys.enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/file-fields.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/file-fields.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/issued-by.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/issued-by.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/helpers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/interfaces/select.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/interfaces/select.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/form-context.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/initial-state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/initial-state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/types/function.type.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/initial-state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/initial-state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/useFormState.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +46,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -49,10 +55,18 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="baimenovbn/feat/new-optimization" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -68,6 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="JavaScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -79,17 +94,22 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="ts.external.directory.path" value="C:\Users\77085\job\apply-job-form\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\temp\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\temp\src\constants" />
+      <recent name="D:\temp\src\models" />
       <recent name="C:\Users\77085\job\apply-job-form\src\assets\images" />
       <recent name="C:\Users\77085\job\apply-job-form\src\assets" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch.jsx" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -102,8 +122,13 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.scratch.jsx" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -119,6 +144,7 @@
       <workItem from="1645977719527" duration="556000" />
       <workItem from="1646009852731" duration="5922000" />
       <workItem from="1646033210048" duration="4115000" />
+      <workItem from="1647012981169" duration="20241000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add upload buttons">
       <created>1646012433959</created>
@@ -164,35 +190,5 @@
     <MESSAGE value="feat: finish logic of keys" />
     <MESSAGE value="feat: finish camera logics" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: finish camera logics" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom" timestamp="1646647605415">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1646647605415" />
-    <state width="1346" height="171" key="GridCell.Tab.0.center" timestamp="1646647605415">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1646647605415" />
-    <state width="1346" height="171" key="GridCell.Tab.0.left" timestamp="1646647605415">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1646647605415" />
-    <state width="1346" height="171" key="GridCell.Tab.0.right" timestamp="1646647605415">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state width="1346" height="171" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1646647605415" />
-    <state x="206" y="28" key="SettingsEditor" timestamp="1646662635884">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="206" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1646662635884" />
-    <state x="363" y="118" width="639" height="532" key="find.popup" timestamp="1646665075620">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="363" y="118" width="639" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1646665075620" />
-    <state x="346" y="89" key="search.everywhere.popup" timestamp="1646665070865">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="346" y="89" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1646665070865" />
   </component>
 </project>

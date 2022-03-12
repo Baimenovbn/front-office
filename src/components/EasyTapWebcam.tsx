@@ -1,9 +1,8 @@
 import Button from '@mui/material/Button';
 import React, { memo, useEffect, useState } from 'react';
 import Webcam from "react-webcam";
-import { StateChanger } from '../models/types/function.type';
 
-function EasyTapWebcam(props: { setStateByKey: StateChanger }) {
+function EasyTapWebcam() {
   useEffect(() => {
     console.log('EasyTapWebcam');
   });
