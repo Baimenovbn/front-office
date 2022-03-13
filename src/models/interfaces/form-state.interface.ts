@@ -12,6 +12,7 @@ export interface IFormState {
     [EStateKeys.DOCUMENT_NUMBER]: string;
     [EStateKeys.DOCUMENT_ISSUED_BY]: string;
     [EStateKeys.DOCUMENT_ISSUED_AT]: Date;
+
     [EStateKeys.CITY]: string;
     [EStateKeys.ADDRESS]: string;
     [EStateKeys.BANK_NAME]: string;

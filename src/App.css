@@ -63,3 +63,7 @@ body {
 .webcam-btns {
   padding-left: 10px;
 }
+
+.error-message {
+  color: red !important;
+}
