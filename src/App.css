@@ -67,3 +67,7 @@ body {
 .error-message {
   color: red !important;
 }
+
+.masked-input {
+  width: 100%;
+}

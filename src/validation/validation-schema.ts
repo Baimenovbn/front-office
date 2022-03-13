@@ -15,10 +15,9 @@ const minLength = ({length}: { length: number; } & MessageParams) => `Миним
 const onlyNumbers = 'Поле должно состоять только из цифр';
 const RESPECTIVELY_TO_MASK = 'Введите данные в соответствии с формой';
 const ONLY_NUMBERS_REGEX = /^[0-9]+$/;
-const IBAN_REGEX = /KZ[A-Za-z0-9]{18}/;
 
 export const validationSchema = Yup.object({
-    [EStateKeys.PHONE]: Yup.string().required(), // TODO
+    [EStateKeys.PHONE]: Yup.string().required().length(11, RESPECTIVELY_TO_MASK),
     [EStateKeys.FIRST_NAME]: Yup.string().required(),
     [EStateKeys.LAST_NAME]: Yup.string().required(),
     [EStateKeys.MIDDLE_NAME]: Yup.string().required(),
@@ -30,7 +29,7 @@ export const validationSchema = Yup.object({
     [EStateKeys.CITY]: Yup.string().required(),
     [EStateKeys.ADDRESS]: Yup.string().required(),
     [EStateKeys.BANK_NAME]: Yup.string().required(),
-    [EStateKeys.IBAN]: Yup.string().matches(IBAN_REGEX, RESPECTIVELY_TO_MASK).required(),
+    [EStateKeys.IBAN]: Yup.string().length(18, RESPECTIVELY_TO_MASK).required(),
 
     [EStateKeys.DOCUMENT_FILES]:  Yup.array().length(1).required(),
     [EStateKeys.VACCINE_PASSPORT_FILES]:  Yup.array().length(1).required(),

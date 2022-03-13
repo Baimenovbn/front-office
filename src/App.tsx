@@ -1,9 +1,8 @@
 import React, {useContext, useMemo} from 'react';
 import './App.css';
 
-import {Form, FormikContext} from 'formik'
-import { FastField } from "formik";
-import {SimpleFileUpload, TextField} from "formik-mui";
+import {FastField, Form, FormikContext} from 'formik'
+import {TextField} from "formik-mui";
 import {DatePicker} from "formik-mui-lab";
 import DateAdapter from '@mui/lab/AdapterDayjs';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -13,22 +12,24 @@ import {EasyTapRadioButton} from "./components/EasyTapRadioButton";
 import {issuedBy} from "./constants/issued-by";
 import {cities} from "./constants/cities";
 import {banks} from "./constants/banks";
-import { Button } from '@mui/material';
+import {Button} from '@mui/material';
 import EasyTapWebcam from "./components/EasyTapWebcam";
 import {fileFields} from "./constants/file-fields";
 import {UploadButton} from "./components/UploadButton";
+import MaskedInput from "./components/MaskedInput";
 
 function App() {
     const formik = useContext(FormikContext);
     const uploadBtns = useMemo(() => fileFields.map(fileMeta =>
         <UploadButton key={fileMeta.stateKey} {...fileMeta}/>
-    ), [])
+    ), []);
+
 
     return (
         <Form className='app-container'>
             {JSON.stringify(formik.values)}
             <h1 className="header-title">Оформление на работу</h1>
-            {/*<Field component={MaskedInput} PhoneInput/>*/}
+            <MaskedInput name={EStateKeys.PHONE} format="+7 (###) ###-##-##" />
             <div className="full-name">
                 <FastField component={TextField} name={EStateKeys.LAST_NAME} className="full-name__item" label="Фамилия" required />
                 <FastField component={TextField} name={EStateKeys.FIRST_NAME} className="full-name__item" label="Имя" required/>
@@ -50,7 +51,7 @@ function App() {
             <FastField component={TextField} name={EStateKeys.ADDRESS} label="Адрес / Мекен-жай" required />
             <EasyTapRadioButton {...banks} />
             <div>
-                {/*<Field component={MaskedInput} IBAN/>*/}
+                <MaskedInput name={EStateKeys.IBAN} format="KZ ## #### #### #### ####" />
                 <p>приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать</p>
             </div>
             {uploadBtns}
