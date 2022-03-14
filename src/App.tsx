@@ -17,6 +17,7 @@ import EasyTapWebcam from "./components/EasyTapWebcam";
 import {fileFields} from "./constants/file-fields";
 import {UploadButton} from "./components/UploadButton";
 import MaskedInput from "./components/MaskedInput";
+import FileUpload from "./components/FileUpload";
 
 function App() {
     const formik = useContext(FormikContext);
@@ -55,6 +56,11 @@ function App() {
                 <p>приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать</p>
             </div>
             {uploadBtns}
+
+            <FileUpload maxFiles={2} label="Удостоверение личности / Жеке куәлік"
+                        helperText='2 фотки с обеих сторон / 2 жағынан фотоға түсіріп жіберіңіз'
+                        name={EStateKeys.DOCUMENT_FILES}
+            />
             <EasyTapWebcam />
             <Button  sx={{alignSelf: 'center'}} variant="contained" type="submit" color="success">
                 Отправить

@@ -31,7 +31,7 @@ export const validationSchema = Yup.object({
     [EStateKeys.BANK_NAME]: Yup.string().required(),
     [EStateKeys.IBAN]: Yup.string().length(18, RESPECTIVELY_TO_MASK).required(),
 
-    [EStateKeys.DOCUMENT_FILES]:  Yup.array().length(1).required(),
+    [EStateKeys.DOCUMENT_FILES]:  Yup.array().length(2, (params) => JSON.stringify(params)).required(),
     [EStateKeys.VACCINE_PASSPORT_FILES]:  Yup.array().length(1).required(),
     [EStateKeys.MEDICAL_PASSPORT_FILES]:  Yup.array().length(1).required(),
     [EStateKeys.BADGE_FILES]: Yup.array().length(1).required(),
