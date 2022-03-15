@@ -15,16 +15,11 @@ import {banks} from "./constants/banks";
 import {Button} from '@mui/material';
 import EasyTapWebcam from "./components/EasyTapWebcam";
 import {fileFields} from "./constants/file-fields";
-import {UploadButton} from "./components/UploadButton";
 import MaskedInput from "./components/MaskedInput";
 import FileUpload from "./components/FileUpload";
 
 function App() {
     const formik = useContext(FormikContext);
-    const uploadBtns = useMemo(() => fileFields.map(fileMeta =>
-        <UploadButton key={fileMeta.stateKey} {...fileMeta}/>
-    ), []);
-
 
     return (
         <Form className='app-container'>
@@ -55,12 +50,16 @@ function App() {
                 <MaskedInput name={EStateKeys.IBAN} format="KZ ## #### #### #### ####" />
                 <p>приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать</p>
             </div>
-            {uploadBtns}
 
-            <FileUpload maxFiles={2} label="Удостоверение личности / Жеке куәлік"
-                        helperText='2 фотки с обеих сторон / 2 жағынан фотоға түсіріп жіберіңіз'
-                        name={EStateKeys.DOCUMENT_FILES}
-            />
+           
+            {
+              fileFields.map(field => (
+                <FileUpload maxFiles={field.maxFiles} label={field.label}
+                            helperText={field.helperText} name={field.name}
+                            key={field.name}
+                />
+              ))
+            }
             <EasyTapWebcam />
             <Button  sx={{alignSelf: 'center'}} variant="contained" type="submit" color="success">
                 Отправить

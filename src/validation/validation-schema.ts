@@ -11,7 +11,8 @@ setLocale({
     },
 });
 
-const minLength = ({length}: { length: number; } & MessageParams) => `Минимальное количество символов: ${length}`
+const minLength = ({length}: { length: number; } & MessageParams) => `Минимальное количество символов: ${length}`;
+const maxFilesLength = ({max}: { max: number; } & MessageParams) => `Допустимое количество файлов: ${max}`;
 const onlyNumbers = 'Поле должно состоять только из цифр';
 const RESPECTIVELY_TO_MASK = 'Введите данные в соответствии с формой';
 const ONLY_NUMBERS_REGEX = /^[0-9]+$/;
@@ -31,8 +32,8 @@ export const validationSchema = Yup.object({
     [EStateKeys.BANK_NAME]: Yup.string().required(),
     [EStateKeys.IBAN]: Yup.string().length(18, RESPECTIVELY_TO_MASK).required(),
 
-    [EStateKeys.DOCUMENT_FILES]:  Yup.array().length(2, (params) => JSON.stringify(params)).required(),
-    [EStateKeys.VACCINE_PASSPORT_FILES]:  Yup.array().length(1).required(),
-    [EStateKeys.MEDICAL_PASSPORT_FILES]:  Yup.array().length(1).required(),
-    [EStateKeys.BADGE_FILES]: Yup.array().length(1).required(),
+    [EStateKeys.DOCUMENT_FILES]:  Yup.array().max(2, maxFilesLength).required(),
+    [EStateKeys.VACCINE_PASSPORT_FILES]:  Yup.array().max(1, maxFilesLength).required(),
+    [EStateKeys.MEDICAL_PASSPORT_FILES]:  Yup.array().max(2, maxFilesLength).required(),
+    [EStateKeys.BADGE_FILES]: Yup.array().max(1, maxFilesLength).required(),
 })

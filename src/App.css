@@ -72,22 +72,12 @@ body {
   width: 100%;
 }
 
-.dropzone-container {
-  border: 1px dashed black;
-  padding: 50px;
+.align-center {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  border-radius: 2px;
+  justify-content: space-between;
 }
 
-.file-upload__label {
-  margin-bottom: 10px;
-}
-
-.file-upload__helper-text {
-  margin-top: 5px;
+.gap-5 {
+  column-gap: 5px;
 }
