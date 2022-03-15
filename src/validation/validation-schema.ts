@@ -18,7 +18,7 @@ const RESPECTIVELY_TO_MASK = 'Введите данные в соответст�
 const ONLY_NUMBERS_REGEX = /^[0-9]+$/;
 
 export const validationSchema = Yup.object({
-    [EStateKeys.PHONE]: Yup.string().required().length(11, RESPECTIVELY_TO_MASK),
+    [EStateKeys.PHONE]: Yup.string().required().length(10, RESPECTIVELY_TO_MASK),
     [EStateKeys.FIRST_NAME]: Yup.string().required(),
     [EStateKeys.LAST_NAME]: Yup.string().required(),
     [EStateKeys.MIDDLE_NAME]: Yup.string().required(),

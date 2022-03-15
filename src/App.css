@@ -65,7 +65,7 @@ body {
 }
 
 .error-message {
-  color: red !important;
+  color: #d32f2f !important;
 }
 
 .masked-input {

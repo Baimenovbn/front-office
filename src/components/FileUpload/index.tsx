@@ -43,7 +43,7 @@ const FileUpload = (props: IFileUpload) => {
                 <AcceptedFileInfo
                   onDelete={() => removeFileByIndex(i)}
                   file={file}
-                  key={file.name}
+                  key={i}
                 />
               )
             )
@@ -53,9 +53,9 @@ const FileUpload = (props: IFileUpload) => {
           <div className="error-message">{ meta.error }</div>
           {
             fileRejections.map(({file, errors}) => (
-              errors.map(e => (
+              errors.map((e, i) => (
                   e.code === ErrorCode.FileInvalidType
-                  ? <li className="error-message">{file.name}: Недопустимый формат файла</li> 
+                  ? <li className="error-message" key={i}>{file.name}: Недопустимый формат файла</li> 
                   : null
               ))
             ))

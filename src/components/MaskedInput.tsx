@@ -17,6 +17,7 @@ const MaskedInput = ({ name, format, mask = '_' }: IMaskedInputProps) => {
                 onBlur={field.onBlur}
                 name={name}
                 className="masked-input"
+                error={meta.touched && Boolean(meta.error)}
             />
             <FormHelperText className="error-message">{meta.touched && meta.error}</FormHelperText>
         </div>
