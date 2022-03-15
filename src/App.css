@@ -63,3 +63,27 @@ body {
 .webcam-btns {
   padding-left: 10px;
 }
+
+.error-message {
+  color: #d32f2f !important;
+}
+
+.masked-input {
+  width: 100%;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-5 {
+  column-gap: 5px;
+}
+
+.main-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

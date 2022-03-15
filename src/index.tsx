@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { FormProvider } from './store/form-context';
 import logo from './assets/images/main-logo.png'
+import FormikForm from "./formik";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FormProvider>
-      <div className="main-logo">
-        <img src={logo} alt="easy-tap" className="main-logo__photo"/>
-      </div>
+    <div className="main-logo">
+      <img src={logo} alt="easy-tap" className="main-logo__photo"/>
+    </div>
+    <FormikForm>
       <App />
-    </FormProvider>
+    </FormikForm>
   </React.StrictMode>,
   document.getElementById('root')
 );

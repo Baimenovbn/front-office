@@ -1,0 +1,3 @@
+import React from "react";
+
+export type withChildren<T> = T & { children: React.ReactNode };

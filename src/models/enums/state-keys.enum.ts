@@ -1,7 +1,7 @@
-export enum EBackendKeys {
+export enum EStateKeys {
   PHONE = 'phone',
   LAST_NAME = 'last_name',
-  FIST_NAME = 'first_name',
+  FIRST_NAME = 'first_name',
   MIDDLE_NAME = 'middle_name',
   IIN = 'iin',
   DOCUMENT_NUMBER = 'document_number',

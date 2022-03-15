@@ -1,23 +1,20 @@
-import { RadioGroup, FormControlLabel, FormLabel, FormControl, Radio } from '@mui/material';
 import { IRadioButtonProps } from '../models/interfaces/select.interface';
-import { useContext } from 'react';
-import { FormContext } from '../store/form-context';
+import {memo, useMemo} from 'react';
+import {FastField} from 'formik';
+import { RadioGroup } from "formik-mui";
+import {FormControl, FormControlLabel, FormLabel, Radio} from "@mui/material";
 
-export function EasyTapRadioButton({ buttons, label, valueKey }: IRadioButtonProps) {
-  const btns = buttons.map((btn) => (
-    <FormControlLabel value={btn.value} key={btn.label} sx={{ alignSelf: 'start'}} control={<Radio />} label={btn.label}/>
-  ));
-  const state = useContext(FormContext);
+export const EasyTapRadioButton = memo((props: IRadioButtonProps) => {
+    const options = useMemo(() => props.options.map(option => (
+        <FormControlLabel control={<Radio required={true} />} key={option.value} label={option.label} value={option.value} />
+    )), []);
 
-  return (
-    <FormControl className="easy-input">
-      <FormLabel>{label}</FormLabel>
-      <RadioGroup className="easy-input"
-        value={state[valueKey]}
-        onChange={(e) => state.changeState(e.target.value, valueKey)}
-      >
-        {btns}
-      </RadioGroup>
-    </FormControl>
-  )
-}
+    return (
+        <FormControl className="easy-input">
+            <FormLabel required>{props.label}</FormLabel>
+            <FastField required component={RadioGroup} name={props.name} label={props.label}>
+                {options}
+            </FastField>
+        </FormControl>
+    );
+});

@@ -1,82 +1,68 @@
-import React, { FormEvent, useContext } from 'react';
+import React from 'react';
 import './App.css';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { issuedBy } from './constants/issued-by';
-import { cities } from './constants/cities';
-import { banks } from './constants/banks';
-import { EasyTapRadioButton } from './components/EasyTapRadioButton';
-import { EasyTapWebcam } from './components/EasyTapWebcam';
-import { UploadButton } from './components/UploadButton';
 
-import { FormContext } from './store/form-context';
-import FullName from './components/FullName';
-import { PhoneInput } from './components/PhoneInput';
-import { DateInput } from './components/DateInput';
-import { fileFields } from './constants/file-fields';
-import { EBackendKeys } from './constants/enums/backend-fields.enum';
-import {API, backendData} from './API';
-import {generateCode, getFormattedDate} from './helpers/helpers';
+import {FastField, Form} from 'formik'
+import {TextField} from "formik-mui";
+import {DatePicker} from "formik-mui-lab";
+import DateAdapter from '@mui/lab/AdapterDayjs';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
-
+import {EStateKeys} from "./models/enums/state-keys.enum";
+import {EasyTapRadioButton} from "./components/EasyTapRadioButton";
+import {issuedBy} from "./constants/issued-by";
+import {cities} from "./constants/cities";
+import {banks} from "./constants/banks";
+import {Button} from '@mui/material';
+import EasyTapWebcam from "./components/EasyTapWebcam";
+import {fileFields} from "./constants/file-fields";
+import MaskedInput from "./components/MaskedInput";
+import FileUpload from "./components/FileUpload";
 
 function App() {
-  const state = useContext(FormContext);
-  const submit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    return (
+        <Form className='app-container'>
+            <h1 className="header-title">Оформление на работу</h1>
+            <MaskedInput name={EStateKeys.PHONE} format="+7 (###) ###-##-##" />
+            <div className="full-name">
+                <FastField component={TextField} name={EStateKeys.LAST_NAME} className="full-name__item" label="Фамилия" required />
+                <FastField component={TextField} name={EStateKeys.FIRST_NAME} className="full-name__item" label="Имя" required/>
+                <FastField component={TextField} name={EStateKeys.MIDDLE_NAME} className="full-name__item" label="Отчество" required />
+            </div>
+            <FastField inputProps={{maxLength: 12}} component={TextField} name={EStateKeys.IIN} label="ИИН / ЖСН" required />
+            <FastField inputProps={{maxLength: 9}}
+                   component={TextField}
+                   name={EStateKeys.DOCUMENT_NUMBER}
+                   label="Номер удостоверения личности / Жеке куәліктің нөмері"
+                   required
+            />
+            <EasyTapRadioButton {...issuedBy} />
+            <LocalizationProvider dateAdapter={DateAdapter}>
+                <FastField component={DatePicker} label="Дата выдачи / Берілген күні" required name={EStateKeys.DOCUMENT_ISSUED_AT} />
+            </LocalizationProvider>
 
-    const code = generateCode();
-    const date = state[EBackendKeys.DOCUMENT_ISSUED_AT];
+            <EasyTapRadioButton {...cities} />
+            <FastField component={TextField} name={EStateKeys.ADDRESS} label="Адрес / Мекен-жай" required />
+            <EasyTapRadioButton {...banks} />
+            <div>
+                <MaskedInput name={EStateKeys.IBAN} format="KZ ## #### #### #### ####" />
+                <p>приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать</p>
+            </div>
 
-    state.changeState(code, EBackendKeys.CODE);
-
-    const newState = {...state, [EBackendKeys.DOCUMENT_ISSUED_AT]: getFormattedDate(date)} as unknown as backendData;
-
-    const response = await API.sumbitForm(newState, code);
-    state.clearState();
-    console.log(response);
-  }
-  const uploadBtns = fileFields.map(fileMeta => <UploadButton key={fileMeta.stateKey} {...fileMeta}/>);
-
-  return (
-    <form className="app-container" onSubmit={submit}>
-      <h1 className="header-title">Оформление на работу</h1>
-      <PhoneInput mask="+{7}(000) 000-00-00"
-                  required
-                  value={state[EBackendKeys.PHONE]}
-                  onComplete={(_, mask) => state.changeState(mask.unmaskedValue, EBackendKeys.PHONE)}
-                  lazy={false} pattern="[0-9]{11}"
-      />
-      <FullName/>
-      <TextField inputProps={{ pattern: "[0-9]{12}", title: 'ИИН должен состоять из 12 цифр' }} value={EBackendKeys.IIN}
-                 onChange={e => state.changeState(e.target.value, EBackendKeys.IIN)} required label="ИИН" variant="outlined"/>
-      <TextField inputProps={{ pattern: "[0-9]{9}", title: 'Номер удостоверения личности должен состоять из 9 цифр' }} value={state[EBackendKeys.DOCUMENT_NUMBER]}
-                 onChange={e => state.changeState(e.target.value, EBackendKeys.DOCUMENT_NUMBER)}
-                 required label="Номер удостоверения личности" variant="outlined"
-      />
-      <EasyTapRadioButton {...issuedBy} />
-      <DateInput />
-      <EasyTapRadioButton {...cities} />
-      <TextField onChange={e => state.changeState(e.target.value, EBackendKeys.ADDRESS)}
-                 required label="Адрес / Мекен-жай" variant="outlined"
-                 value={EBackendKeys.ADDRESS}
-      />
-      <EasyTapRadioButton {...banks} />
-      <PhoneInput mask="KZ******************"
-                  required pattern="KZ[A-Za-z0-9]{18}"
-                  value={state[EBackendKeys.IBAN]}
-                  onComplete={(_, mask) => state.changeState(mask.unmaskedValue, EBackendKeys.IBAN)}
-                  lazy={false} label="IBAN счет" placeholder="приложение Kaspi – Мой банк – Инфо – Реквизиты – Правый верхний угол кнопка «Поделиться» - Копировать"
-      />
-      {uploadBtns}
-      <EasyTapWebcam />
-      <div style={{textAlign: 'center'}}>
-        <Button variant="contained" type="submit" color="success">
-          Отправить
-        </Button>
-      </div>
-    </form>
-  );
+           
+            {
+              fileFields.map(field => (
+                <FileUpload maxFiles={field.maxFiles} label={field.label}
+                            helperText={field.helperText} name={field.name}
+                            key={field.name}
+                />
+              ))
+            }
+            <EasyTapWebcam />
+            <Button  sx={{alignSelf: 'center'}} variant="contained" type="submit" color="success">
+                Отправить
+            </Button>
+        </Form>
+    )
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { initialState } from '../store/initial-state';
+import {IFinalFormState} from '../models/interfaces/form-state.interface';
 const instance = axios.create({
   baseURL: 'https://requestbin.net/'
 })
@@ -10,14 +10,12 @@ export interface IBackendDate {
   year: number;
 }
 
-export type backendData = typeof initialState & { date: IBackendDate };
-
 export const API = {
-  async sumbitForm(data: backendData, generatedCode = '') {
+  async submitForm(data: IFinalFormState, generatedCode = '') {
     return await instance.post(`r/${generatedCode}`, data);
   },
 
-  async getCode() {
-    return await instance.get(`r/?code`);
+  async getCode(): Promise<string> {
+    return (await instance.get(`r/?code`))?.data?.code;
   }
 }
