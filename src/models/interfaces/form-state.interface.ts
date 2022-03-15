@@ -18,12 +18,23 @@ export interface IFormState {
     [EStateKeys.BANK_NAME]: string;
     [EStateKeys.IBAN]: string;
     [EStateKeys.CODE]: string;
+    [EStateKeys.DOCUMENT_FILES]: File[];
+    [EStateKeys.VACCINE_PASSPORT_FILES]: File[];
+    [EStateKeys.MEDICAL_PASSPORT_FILES]: File[];
+    [EStateKeys.BADGE_FILES]: File[];
+}
+
+export interface IFinalFormState
+  extends Omit<IFormState,
+    EStateKeys.DOCUMENT_ISSUED_AT
+    | EStateKeys.DOCUMENT_FILES
+    | EStateKeys.VACCINE_PASSPORT_FILES
+    | EStateKeys.MEDICAL_PASSPORT_FILES
+    | EStateKeys.BADGE_FILES
+    > {
+    [EStateKeys.DOCUMENT_ISSUED_AT]: IBackendDate;
     [EStateKeys.DOCUMENT_FILES]: base64[];
     [EStateKeys.VACCINE_PASSPORT_FILES]: base64[];
     [EStateKeys.MEDICAL_PASSPORT_FILES]: base64[];
     [EStateKeys.BADGE_FILES]: base64[];
-}
-
-export interface IFinalFormState extends Omit<IFormState, EStateKeys.DOCUMENT_ISSUED_AT> {
-    [EStateKeys.DOCUMENT_ISSUED_AT]: IBackendDate;
 }

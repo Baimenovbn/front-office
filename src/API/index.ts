@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { initialState } from '../constants/initial-state';
-import { EStateKeys } from '../models/enums/state-keys.enum';
+import {IFinalFormState} from '../models/interfaces/form-state.interface';
 const instance = axios.create({
   baseURL: 'https://requestbin.net/'
 })
@@ -11,15 +10,12 @@ export interface IBackendDate {
   year: number;
 }
 
-export type backendData = Omit<typeof initialState, 'document_issued_at'>
-                          & { [EStateKeys.DOCUMENT_ISSUED_AT]: IBackendDate };
-
 export const API = {
-  async submitForm(data: backendData, generatedCode = '') {
+  async submitForm(data: IFinalFormState, generatedCode = '') {
     return await instance.post(`r/${generatedCode}`, data);
   },
 
-  async getCode() {
-    return await instance.get(`r/?code`);
+  async getCode(): Promise<string> {
+    return (await instance.get(`r/?code`))?.data?.code;
   }
 }

@@ -81,3 +81,9 @@ body {
 .gap-5 {
   column-gap: 5px;
 }
+
+.main-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

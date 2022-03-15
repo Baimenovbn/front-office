@@ -12,6 +12,7 @@ const MaskedInput = ({ name, format, mask = '_' }: IMaskedInputProps) => {
             <NumberFormat
                 customInput={MuiTextField}
                 format={format}
+                value={field.value}
                 allowEmptyFormatting mask={mask}
                 onValueChange={values => helpers.setValue(values.floatValue)}
                 onBlur={field.onBlur}
@@ -19,7 +20,9 @@ const MaskedInput = ({ name, format, mask = '_' }: IMaskedInputProps) => {
                 className="masked-input"
                 error={meta.touched && Boolean(meta.error)}
             />
-            <FormHelperText className="error-message">{meta.touched && meta.error}</FormHelperText>
+            <FormHelperText className="error-message">
+              {meta.touched && meta.error}
+            </FormHelperText>
         </div>
     )
 };

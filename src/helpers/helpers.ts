@@ -1,6 +1,9 @@
-import { IBackendDate } from '../API';
+import {IBackendDate} from '../API';
+import {IFinalFormState, IFormState} from '../models/interfaces/form-state.interface';
+import {EStateKeys} from '../models/enums/state-keys.enum';
+import {base64} from '../models/types/base64.type';
 
-export function getBase64(file: File | null | undefined): Promise<string | ArrayBuffer | null> {
+export function getBase64(file: File | null | undefined): Promise<base64> {
   if (!file) {
     return new Promise(res => res(null));
   }
@@ -40,3 +43,32 @@ export function formatBytes(bytes: number, decimals = 2) {
 
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
+
+export async function transformDataForBackend(state: IFormState): Promise<IFinalFormState> {
+  const phone = EStateKeys.PHONE;
+  const newDate = getFormattedDate(state[EStateKeys.DOCUMENT_ISSUED_AT]);
+  const code =  generateCode();
+
+  return new Promise(res => {
+    Promise.all([
+      Promise.all(state[EStateKeys.DOCUMENT_FILES].map(async (f) => (await getBase64(f)))),
+      Promise.all(state[EStateKeys.VACCINE_PASSPORT_FILES].map(async (f) => (await getBase64(f)))),
+      Promise.all(state[EStateKeys.MEDICAL_PASSPORT_FILES].map(async (f) => (await getBase64(f)))),
+      Promise.all(state[EStateKeys.BADGE_FILES].map(async (f) => (await getBase64(f)))),
+    ]).then(([docs, vacc, med, badge]) => {
+      res({
+        ...state,
+        [EStateKeys.PHONE]: `7${state[phone]}`,
+        [EStateKeys.DOCUMENT_ISSUED_AT]: newDate,
+        [EStateKeys.DOCUMENT_FILES]: docs,
+        [EStateKeys.VACCINE_PASSPORT_FILES]: vacc,
+        [EStateKeys.MEDICAL_PASSPORT_FILES]: med,
+        [EStateKeys.BADGE_FILES]: badge,
+        [EStateKeys.CODE]: code
+      })
+    });
+  });
+
+
+}
+

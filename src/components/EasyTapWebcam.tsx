@@ -1,11 +1,8 @@
 import Button from '@mui/material/Button';
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useState } from 'react';
 import Webcam from "react-webcam";
 
 function EasyTapWebcam() {
-  useEffect(() => {
-    console.log('EasyTapWebcam');
-  });
   const webcamRef = React.useRef(null);
   const [isPhoto, setIsPhoto] = useState(false);
   const [isPhotoTaken, setIsPhotoTaken] = useState(false);
@@ -25,7 +22,7 @@ function EasyTapWebcam() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
       {
         isPhotoTaken
-          ? <img src={imgSrc} alt="photo" style={{width: '60%'}}/>
+          ? <img src={imgSrc} alt="your-avatar" style={{width: '60%'}}/>
           : (isPhoto ? <Webcam audio={false} width="60%" ref={webcamRef} mirrored={true} /> : '')
       }
       <div className="webcam-btns">
